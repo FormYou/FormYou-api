@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_153422) do
     t.datetime "remember_created_at"
     t.string "role"
     t.string "name"
+    t.string "checked", default: "f"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
