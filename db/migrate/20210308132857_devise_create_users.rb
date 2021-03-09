@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # User Roles (Admin, teacher, student)
       t.string :role
       t.string :name
-      t.string :checked, default: false
+      t.boolean :checked, default: false
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
