@@ -1,6 +1,6 @@
 class Api::FormationsController < ApplicationController
   before_action :set_formation, only: [:show, :update, :destroy]
-  before_action :authenticate_user!, exept: [:index]
+  before_action :authenticate_user!, only: [:show]
   before_action :is_admin?, only: [:create, :update, :destroy]
 
   # GET /formations
