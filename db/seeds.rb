@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# User.destroy_all
-Formation.destroy_all
+User.destroy_all
+Category.destroy_all
+# Formation.destroy_all
 
 10.times do
   User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "student")
@@ -25,4 +26,7 @@ end
 # 10.times do 
 #   Formation.create(title: Faker::ProgrammingLanguage.name, description: Faker::Alphanumeric.alpha(number: 20), user_id:"user_id",)
 # end
-Formation.create(title: "hellotitle", description: "0123456789fefgfhfhhfhvjhvhjvhkvhkvhk!bgjjgcygnjvjgcghtj12345678902222", user_id: "31")
+# Formation.create(title: "hellotitle", description: "0123456789fefgfhfhhfhvjhvhjvhkvhkvhk!bgjjgcygnjvjgcghtj12345678902222", user_id: "31")
+5.times do
+Category.create(name: Faker::Game.genre)
+end
