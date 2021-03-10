@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :attendences
   has_many :sessions, through: :attendences
+
 end
