@@ -1,10 +1,9 @@
 class Api::UsersController < Api::BaseController
-    before_action :is_admin?, only: %w[index update destroy]
+    before_action :is_admin?, only: %w[index update destroy teacher student checked]
     before_action :find_user, only: %w[show update]
   
     def index
       @users = User.all
-  
       render json: @users
     end
 
@@ -18,6 +17,21 @@ class Api::UsersController < Api::BaseController
       else
         render json: @user.errors, status: :unprocessable_entity
       end
+    end
+
+    def teacher
+      @teacher = User.where(role: "teacher")
+      render json: @teacher
+    end
+
+    def student
+      @student = User.where(role: "student")
+      render json: @student
+    end
+
+    def checked
+      @checked = User.where(checked: false)
+      render json: @checked
     end
   
     private

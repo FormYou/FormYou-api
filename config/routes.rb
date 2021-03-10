@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: %w[show index update]
+    resources :users, only: %w[show index update] do
+      collection do
+        get :teacher
+        get :student
+        get :checked
+      end
+    end
     resources :attendences
     resources :formations do 
       resources :sessions
