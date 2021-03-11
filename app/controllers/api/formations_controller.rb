@@ -7,7 +7,7 @@ class Api::FormationsController < ApplicationController
   def index
     @formations = Formation.all
 
-    render json: @formations, include: [:sessions]
+    render json: @formations, include: [:categories]
   end
 
   # GET /formations/1
@@ -18,8 +18,13 @@ class Api::FormationsController < ApplicationController
   # POST /formations
   def create
     @formation = Formation.new(formation_params)
-
+    params.require(:formation).permit(:category_id)
+    @categories = params[:category_id]
+    
     if @formation.save
+      @categories.each do |category|
+        AssignementCategory.create(category_id: category, formation_id: @formation.id)
+      end
       render json: @formation, include: [:user], status: :created
     else
       render json: @formation.errors, status: :unprocessable_entity
@@ -49,6 +54,10 @@ class Api::FormationsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def formation_params
       params.require(:formation).permit(:title, :description, :user_id)
+    end
+
+    def assignement_category_params
+      params.require(:assignement_category).permit(:category_id)
     end
 
     def is_admin?
