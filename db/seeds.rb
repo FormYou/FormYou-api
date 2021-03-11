@@ -17,9 +17,7 @@ Session.delete_all
 Session.reset_pk_sequence
 
 #admin
-1.times do
-  User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "admin", checked:"true")
-end
+User.create(name: "admin", email: "admin@cool.fr", password:"azerty", password_confirmation:"azerty", role: "admin", checked:"true")
 
 #student
 10.times do
