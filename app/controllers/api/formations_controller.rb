@@ -7,7 +7,7 @@ class Api::FormationsController < ApplicationController
   def index
     @formations = Formation.all
 
-    render json: @formations
+    render json: @formations, include: [:categories]
   end
 
   # GET /formations/1
