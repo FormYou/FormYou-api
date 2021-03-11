@@ -9,7 +9,6 @@ Rails.application.routes.draw do
         get :checked
       end
     end
-    resources :sessions, only: %w[show]
     resources :attendences
     resources :formations do 
       resources :sessions
