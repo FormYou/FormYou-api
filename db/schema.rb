@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_153422) do
 
   create_table "sessions", force: :cascade do |t|
     t.integer "duration"
-    t.datetime "date"
+    t.string "date"
     t.bigint "formation_id"
     t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false

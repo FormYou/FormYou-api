@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :formations do 
       resources :sessions
     end
+    resources :sessions
     resources :categories
     resources :assignement_categories
     resources :rooms
