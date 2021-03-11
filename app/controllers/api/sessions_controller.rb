@@ -2,6 +2,7 @@ class Api::SessionsController < ApplicationController
     before_action :set_session, only: [:show, :update, :destroy]
     before_action :is_admin?, only: [:create, :update, :destroy]
     before_action :find_formation, only: [:create, :update]
+    before_action :authenticate_user!
   
     # GET /formations
     def index
@@ -12,7 +13,7 @@ class Api::SessionsController < ApplicationController
   
     # GET /sessions/1
     def show
-      render json: @session
+      render json: @session, include: [:attendences, :formation]
     end
   
     # POST /sessions
