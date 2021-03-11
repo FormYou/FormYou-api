@@ -10,6 +10,9 @@ require 'faker'
 User.destroy_all
 Category.destroy_all
 # Formation.destroy_all
+1.times do
+  User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "admin", checked:"true")
+end
 
 10.times do
   User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "student")
@@ -19,14 +22,12 @@ end
   User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "teacher")
 end
 
-1.times do
-  User.create(name: Faker::Name.name, email: Faker::Internet.email, password:"azerty", password_confirmation:"azerty", role: "admin", checked:"true")
+
+
+4.times do 
+  Formation.create(title: Faker::ProgrammingLanguage.name, description: Faker::Lorem.paragraph(sentence_count: 3), user_id:"user_id",)
 end
 
-# 10.times do 
-#   Formation.create(title: Faker::ProgrammingLanguage.name, description: Faker::Alphanumeric.alpha(number: 20), user_id:"user_id",)
-# end
-# Formation.create(title: "hellotitle", description: "0123456789fefgfhfhhfhvjhvhjvhkvhkvhk!bgjjgcygnjvjgcghtj12345678902222", user_id: "31")
 5.times do
 Category.create(name: Faker::Game.genre)
 end
