@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     def index
       @sessions = Session.all
   
-      render json: @sessions
+      render json: @sessions, include: [:formation , :attendences]
     end
   
     # GET /sessions/1
