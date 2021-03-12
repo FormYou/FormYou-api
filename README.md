@@ -1,24 +1,32 @@
-# README
+# YouForm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##The app
 
-Things you may want to cover:
+This project is an API for a dummy courses platform, coded during THP Next bootcamp 2021.
+It work in pair with its own [client app](https://github.com/FormYou/FormYou-client)
 
-* Ruby version
+The app allows Students to join courses sessions, taught by Teachers, and managed by Admins.
 
-* System dependencies
+##Access
 
-* Configuration
+Admin: 
+email: admin@cool.fr
+password: azerty
 
-* Database creation
+##Try the app
 
-* Database initialization
+[Accédez à l'app](https://form-you-client-r2gdxqqhl-youform.vercel.app/)
 
-* How to run the test suite
+## Tech
 
-* Services (job queues, cache servers, search engines, etc.)
+Javascript and [React](https://github.com/facebook/react), [Node Sass](https://github.com/sass/node-sass).
 
-* Deployment instructions
+## Potential Improvements
 
-* ...
+
+## Contributors
+
+- [:cactus: Dylan Pecqueux](https://github.com/dylan-pecqueux)
+- [:deciduous_tree: Stephen Toulouse](https://github.com/stephen2790022)
+- [:deciduous_tree: Gaëtan Altier](https://github.com/Badgaga23)
+- [:seedling: Mathieu Joly](https://github.com/mathieu-superpose)
