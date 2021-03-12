@@ -8,7 +8,7 @@ class Api::UsersController < Api::BaseController
     end
 
     def show
-      render_jsonapi_response(@user)
+      render json: @user, include: [:formations, :sessions]
     end
 
     def update
